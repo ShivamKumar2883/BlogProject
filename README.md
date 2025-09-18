@@ -1,24 +1,27 @@
-# README
+# Alpha Blog (Rails 7)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple blog application built with Ruby on Rails 7 featuring article management with MySQL database.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- **Static Pages**
+  - Homepage
+  - About Page
+  - Articles Listing Page
 
-* System dependencies
+- **Article Management (CRUD)**
+  - Create, Read, Update and Delete articles
+  - Form validations and error handling
 
-* Configuration
+- **Database**
+  - MySQL database setup
+  - Includes schema and migrations
 
-* Database creation
+*Note: This version does not include user authentication.*
 
-* Database initialization
+## Installation
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ShivamKumar2883/Aplha_blogUsingRails7.git
+   cd Aplha_blogUsingRails7
