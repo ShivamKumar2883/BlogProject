@@ -1,5 +1,19 @@
-<h1>Welcome to the Homepage</h1>
-
-<%= link_to 'Article listing', articles_path %>  |
-
-<%= link_to 'About page', about_path %>
+<div class="container" id="home-container">
+  <div id="page-content">
+    <div class="jumbotron" id="jumbotron-edit"
+         style="background-image: url('/images/bvokal_cover.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                min-height: 50vh; height: auto;
+                min-width: 50vh; width: auto;">
+    </div>
+    <div id="home-text" class="text-center mt-4">
+      <h1 class="display-4">Bvokal Article</h1>
+      <p class="lead">An article listing page by Bvocal.</p>
+      <hr class="my-4">
+      <p>Feel free to connect and share an article.</p>
+      <%= link_to "Sign Up", signup_path, class: "btn btn-outline-success btn-lg" %>
+    </div>
+  </div>
+</div>

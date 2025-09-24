@@ -1,9 +1,10 @@
-import { Application } from "@hotwired/stimulus"
+// Import jQuery and Bootstrap JS
+import "jquery";
+import "popper.js";
+import "bootstrap";
 
-const application = Application.start()
-
-// Configure Stimulus development experience
-application.debug = false
-window.Stimulus   = application
-
-export { application }
+// Your other imports...
+require("@rails/ujs").start();
+require("turbolinks").start();
+require("@rails/activestorage").start();
+require("channels");

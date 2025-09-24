@@ -1,12 +1,35 @@
-<div id="<%= dom_id article %>">
-  <p>
-    <strong>Title:</strong>
-    <%= article.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= article.description %>
-  </p>
-
+<div class="container">
+  <div class="row justify-content-center">
+    <% @articles.each do |article| %>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="card h-100 shadow text-center">
+          <div class="card-header font-italic">
+            <% if article.user %>
+              By <%= link_to article.user.username, user_path(article.user) %>
+            <% end %>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success" %></h5>
+            <p class="card-text flex-grow-1"><%= truncate(article.description, length: 100) %></p>
+            <div class="mt-auto">
+              <%= link_to "View", article_path(article), class: "btn btn-outline-success" %>
+              <% if logged_in? && (article.user == current_user || current_user.admin?) %>
+                <%= link_to "Edit", edit_article_path(article), class: "btn btn-outline-info" %>
+                <%= button_to 'Delete', article_path(article), 
+                method: :delete,
+                data: { turbo_confirm: "Are you sure?" },
+                class: "btn btn-outline-danger mt-1" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="card-footer text-muted">
+            <small>
+              Created ago <%= time_ago_in_words(article.created_at) %>, 
+              edited <%= time_ago_in_words(article.updated_at) %> ago
+            </small>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
