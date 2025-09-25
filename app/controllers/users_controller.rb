@@ -60,7 +60,7 @@ class UsersController < ApplicationController
         end
     end
     redirect_back fallback_location: root_path, alert: "No results found."
-    end
+  end
 
   private
   def user_params
