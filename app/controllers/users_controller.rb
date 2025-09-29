@@ -59,13 +59,12 @@ class UsersController < ApplicationController
           redirect_to article_path(article) and return
         end
     end
-    # if no result found redirt to previous page and if no prevoius page then root page.
     redirect_back fallback_location: root_path, alert: "No results found."
   end
 
   private
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password, :avatar)
   end
 
   def set_user
